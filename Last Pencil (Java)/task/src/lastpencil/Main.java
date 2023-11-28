@@ -4,11 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     private static int amountOfPencils;
-    private static Scanner scanner = new Scanner(System.in);
-    private static String john = "John";
-    private static String jack = "Jack";
-    private static String johnsTurn = "John's turn!";
-    private static String jacksTurn = "Jack's turn:";
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final String john = "John";
+    private static final String jack = "Jack";
     private static String startingPlayer;
     private static boolean hasViableAmountOfPencils = false;
     private static boolean hasViableStartingPlayer = false;
@@ -71,11 +69,10 @@ public class Main {
     }
 
     private static void playerTurn() {
-        System.out.println(johnsTurn);
+        System.out.println("John's turn!");
         while (true) {
-            int input = 0;
             try {
-                input = Integer.parseInt(scanner.nextLine());
+                int input = Integer.parseInt(scanner.nextLine());
                 if (input < 1 || input > 3) {
                     System.out.println("Possible values: '1', '2' or '3'");
                 } else if (amountOfPencils - input < 0) {
@@ -96,7 +93,7 @@ public class Main {
     }
 
     private static void botTurn() {
-        System.out.println(jacksTurn);
+        System.out.println("Jack's turn:");
         if (amountOfPencils > 3 && amountOfPencils % 4 == 0) {
             amountOfPencils -= 3;
             System.out.println("3");

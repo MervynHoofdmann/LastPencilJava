@@ -13,16 +13,15 @@ public class Main {
 
         howManyPencils();
         whoGoesFirst();
-        printPencils();
         if (startingPlayer.equals(jack)) {
-            botTurn();
             printPencils();
+            botTurn();
         }
         while (true) {
+            printPencils();
             playerTurn();
             printPencils();
             botTurn();
-            printPencils();
         }
 
     }

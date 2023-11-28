@@ -8,8 +8,6 @@ public class Main {
     private static final String john = "John";
     private static final String jack = "Jack";
     private static String startingPlayer;
-    private static boolean hasViableAmountOfPencils = false;
-    private static boolean hasViableStartingPlayer = false;
 
     public static void main(String[] args) {
 
@@ -31,6 +29,7 @@ public class Main {
 
     private static void howManyPencils() {
         System.out.println("How many pencils would you like to use:");
+        boolean hasViableAmountOfPencils = false;
         while (!hasViableAmountOfPencils) {
             try {
                 amountOfPencils = Integer.parseInt(scanner.nextLine());
@@ -47,6 +46,7 @@ public class Main {
 
     private static void whoGoesFirst() {
         System.out.println("Who will be the first (" + john + ", " + jack + "):");
+        boolean hasViableStartingPlayer = false;
         while (!hasViableStartingPlayer) {
             startingPlayer = scanner.nextLine();
             if (startingPlayer.equals(john)) {
